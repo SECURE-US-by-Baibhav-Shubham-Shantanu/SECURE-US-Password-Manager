@@ -2,25 +2,35 @@
 	margin: 0;
 	padding: 0;
 	font-family: serif;
-	transition: 2s;
+	transition: 1.5s;
 }
 .hero{
 	height: 100%;
 	width: 100%;
-	background-image: url(../images/bgimg.jpg);
+	background-image: url(bgimg.jpg);
 	background-position: center;
 	background-size: cover;
+	background-attachment: fixed;
 	position: absolute;
 }
-.form-box{
-	height: 610px;
-	width: 700px;
+.main-box{
+	height: 620px;
+	width: 1100px;
 	top: 70px;
-	left: -200px;
 	margin: auto;
-	background: linear-gradient(45deg, #000, #333333);
-	border-radius: 8px 0 0 8px;
+	border-radius: 8px 8px 8px 8px;
 	position: relative;
+	overflow: hidden;
+}
+.form-box{
+	height: 620px;
+	width: 700px;
+	top: 0;
+	left: 0;
+	background: linear-gradient(45deg, #000, #333333);
+	background-attachment: fixed;
+	border-radius: 8px 0 0 8px;
+	position: absolute;
 	overflow: hidden;
 }
 .signin-group{
@@ -72,13 +82,33 @@
 	position: relative;
 	border-radius: 50px;
 	border: 0;
-	font-weight: bold;
+	font-weight: bold; 
 	background: linear-gradient(90deg, #00cc7a, #009966);
+}
+.signin-btn:hover{
+	color: #263300;
+	background: linear-gradient(90deg, #cccc00, #ffff99);
+}
+.signin-btn:active{
+	color: #263300;
+	background: linear-gradient(90deg, #ffff99, #cccc00);
 }
 a{
 	top: 210px;
 	position: relative;
 	font-weight: bold;
+}
+a:link{
+	color: #fff;
+}
+a:visited{
+	color: #4d4d4d;
+}
+a:hover{
+	color: #ffff80;
+}
+a:active{
+	color: #666600;
 }
 img{
 	height: 90px;
@@ -136,23 +166,32 @@ img{
 	position: relative;
 	border-radius: 50px;
 	border: 0;
-	font-weight: bold;
+	font-weight: bold; 
 	background: linear-gradient(90deg, #00cc7a, #009966);
 }
-
+.signup-btn:hover{
+	color: #263300;
+	background: linear-gradient(90deg, #cccc00, #ffff99);
+}
+.signup-btn:active{
+	color: #263300;
+	background: linear-gradient(90deg, #ffff99, #cccc00);
+}
 .toggle-box{
-	height: 610px;
-	width: 400px;
+	height: 620px;
+	width: 700px;
 	margin: auto;
-	top: -540px;
-	left: 350px;
+	top: 0px;
+	left: 700px;
 	background: linear-gradient(90deg, #00cc7a, #009966);
+	background-attachment: fixed;
 	border-radius: 0 8px 8px 0;
-	position: relative;
+	position: absolute;
 	overflow: hidden;
 }
 .signuptoggle-group{
-	top: 150px;
+	top: 160px;
+	left: -150px;
 	position: relative;
 }
 #hellofriend{
@@ -173,17 +212,26 @@ img{
 	width: 233px;
 	height: 50px;
 	top: 120px;
-	left: 83.5px;
+	left: 233.5px;
 	position: relative;
 	border-radius: 50px;
 	border: 1;
 	border-color: #fff;
-	font-weight: bold;
+	font-weight: bold; 
 	background: linear-gradient(90deg, #00cc7a, #009966);
 }
+.signupage-btn:hover{
+	background: linear-gradient(90deg, #cccc00, #ffff99);
+	color: #263300;
+}
+
+.signupage-btn:active{
+	background: linear-gradient(90deg, #ffff99, #cccc00);
+	color: #263300;
+}
 .signintoggle-group{
-	top: -21px;
-	left: -600px;
+	top: -11px;
+	left: -750px;
 	position: relative;
 }
 #welcomeback{
@@ -204,11 +252,19 @@ img{
 	width: 233px;
 	height: 50px;
 	top: 120px;
-	left: 83.5px;
+	left: 233.5px;
 	position: relative;
 	border-radius: 50px;
 	border: 1;
 	border-color: #fff;
-	font-weight: bold;
+	font-weight: bold; 
 	background: linear-gradient(90deg, #00cc7a, #009966);
+} 
+.signinpage-btn:hover{
+	background: linear-gradient(90deg, #cccc00, #ffff99);
+	color: #263300;
+}
+.signinpage-btn:active{
+	background: linear-gradient(90deg, #ffff99, #cccc00);
+	color: #263300;
 }
