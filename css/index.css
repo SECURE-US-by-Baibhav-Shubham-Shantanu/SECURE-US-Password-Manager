@@ -7,7 +7,7 @@
 .hero{
 	height: 100%;
 	width: 100%;
-	background-image: url(bgimg.jpg);
+	background-image: url(../images/bgimg.jpg);
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
@@ -82,7 +82,7 @@
 	position: relative;
 	border-radius: 50px;
 	border: 0;
-	font-weight: bold; 
+	font-weight: bold;
 	background: linear-gradient(90deg, #00cc7a, #009966);
 }
 .signin-btn:hover{
@@ -166,7 +166,7 @@ img{
 	position: relative;
 	border-radius: 50px;
 	border: 0;
-	font-weight: bold; 
+	font-weight: bold;
 	background: linear-gradient(90deg, #00cc7a, #009966);
 }
 .signup-btn:hover{
@@ -217,7 +217,7 @@ img{
 	border-radius: 50px;
 	border: 1;
 	border-color: #fff;
-	font-weight: bold; 
+	font-weight: bold;
 	background: linear-gradient(90deg, #00cc7a, #009966);
 }
 .signupage-btn:hover{
@@ -257,9 +257,9 @@ img{
 	border-radius: 50px;
 	border: 1;
 	border-color: #fff;
-	font-weight: bold; 
+	font-weight: bold;
 	background: linear-gradient(90deg, #00cc7a, #009966);
-} 
+}
 .signinpage-btn:hover{
 	background: linear-gradient(90deg, #cccc00, #ffff99);
 	color: #263300;

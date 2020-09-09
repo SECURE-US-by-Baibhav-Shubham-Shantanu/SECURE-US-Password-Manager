@@ -67,30 +67,38 @@ if (isset($_POST['signup'])) {
 <HEAD>
 	<TITLE>SECURE US Sign in/Sign up Page</TITLE>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="Index.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
 </HEAD>
 <BODY>
 	<div class="hero">
 		<div class="main-box">
 			<div class="form-box" id="formbox">
-				<form class="signin-group" id="signinform"> 
-					<h1 id="signintosecureus">Sign in to <img src="logo1.png"></h1>
-					<input type="text" class="signininput-field" placeholder="ENTER USER ID" required><br>
-			 		<input type="password" class="signininput-field" placeholder="ENTER MASTER PASSWORD" required><br>
+				<form class="signin-group" id="signinform" method="post">
+					<h1 id="signintosecureus">Sign in to <img src="images/logo1.png"></h1>
+					<input type="text" class="signininput-field" placeholder="ENTER USER ID"
+					 name="username" required><br>
+					<input type="password" class="signininput-field" placeholder="ENTER MASTER PASSWORD"
+					 name="password" required><br>
 					<input type="checkbox" class="signincheck-box"><span class="signinspan">Remember Master Password?<br></span>
-					<button type="submit" class="signin-btn">SIGN IN</button><br>
+					<button type="submit" class="signin-btn" name="signin">SIGN IN</button><br>
 					<a href="">Need help with Sign in?</a>
-				</form>	
-				<form class="signup-group" id="signupform"> 
-					<h1 id="signupinsecureus">Sign up in <img src="logo1.png"></h1>
-					<input type="text" class="signupinput-field" placeholder="ENTER YOUR NAME" required><br>
-					<input type="email" class="signupinput-field" placeholder="ENTER YOUR EMAIL ID" required><br>
-					<input type="text" class="signupinput-field" placeholder="ENTER A USERNAME" required><br>
-			 		<input type="password" class="signupinput-field" placeholder="ENTER NEW MASTER PASSWORD" required><br>
-			 		<input type="password" class="signupinput-field" placeholder="CONFIRM NEW MASTER PASSWORD" required><br>
-					<input type="checkbox" class="signupcheck-box" required><span class="signupspan">I agree to the terms and conditions<br></span>
-					<button type="submit" id="sbtn" class="signup-btn">SIGN UP</button><br>
-				</form>		
+				</form>
+				<form class="signup-group" id="signupform" method="post">
+					<h1 id="signupinsecureus">Sign up in <img src="images/logo1.png"></h1>
+					<input type="text" class="signupinput-field" placeholder="ENTER YOUR NAME"
+					 name="name" required><br>
+					<input type="email" class="signupinput-field" placeholder="ENTER YOUR EMAIL ID"
+					 name="email" required><br>
+					<input type="text" class="signupinput-field" placeholder="ENTER A USERNAME"
+					 name="username" required><br>
+				 	<input type="password" class="signupinput-field" placeholder="ENTER NEW MASTER PASSWORD"
+					 name="password" required><br>
+				 	<input type="password" class="signupinput-field" placeholder="CONFIRM NEW MASTER PASSWORD"
+					 name = "confPassword" required><br>
+					<input type="checkbox" class="signupcheck-box" required><span class="signupspan">
+						I agree to the terms and conditions<br></span>
+					<button type="submit" id="sbtn" class="signup-btn" name="signup">SIGN UP</button><br>
+			</form>
 			</div>
 			<div class="toggle-box" id="hfbox">
 				<div class="signuptoggle-group" id="sutg">
