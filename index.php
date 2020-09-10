@@ -77,8 +77,22 @@ if (isset($_POST['signup'])) {
 					<h1 id="signintosecureus">Sign in to <img src="images/logo1.png"></h1>
 					<input type="text" class="signininput-field" placeholder="ENTER USER ID"
 					 name="username" required><br>
+
+			 		<div class="userid-alert-box">
+			 			<div class="triangle"></div>
+			 			<div class="msg-box">The <strong>User ID</strong> you've entered <strong>doesn't match any account</strong>.
+						</div><br>
+			 		</div>
+
 					<input type="password" class="signininput-field" placeholder="ENTER MASTER PASSWORD"
 					 name="password" required><br>
+
+					<div class="password-alert-box">
+						<div class="triangle"></div>
+						<div class="msg-box">The <strong>Password</strong> you've entered is <strong>incorrect</strong>.
+						</div><br>
+ 			 		</div>
+
 					<input type="checkbox" class="signincheck-box"><span class="signinspan">Remember Master Password?<br></span>
 					<button type="submit" class="signin-btn" name="signin">SIGN IN</button><br>
 					<a href="">Need help with Sign in?</a>
@@ -89,10 +103,33 @@ if (isset($_POST['signup'])) {
 					 name="name" required><br>
 					<input type="email" class="signupinput-field" placeholder="ENTER YOUR EMAIL ID"
 					 name="email" required><br>
+
+					<div class="email-at-box">
+ 			 			<div class="triangle"></div>
+ 			 			<div class="msg-box">The <strong>Email ID</strong> you've entered is <strong>already registered</strong>.
+ 						</div><br>
+ 			 		</div>
+
 					<input type="text" class="signupinput-field" placeholder="ENTER A USERNAME"
 					 name="username" required><br>
+
+					 <div class="userid-at-box">
+  			 			<div class="triangle"></div>
+  			 			<div class="msg-box">The <strong>User ID</strong> you've entered is <strong>already taken</strong>.
+  						</div><br>
+  			 		</div>
+
 				 	<input type="password" class="signupinput-field" placeholder="ENTER NEW MASTER PASSWORD"
 					 name="password" required><br>
+
+					 <div class="password-strength-box">
+  			 			<div class="triangle"></div>
+  			 			<div class="password-strength-msg-box">The <strong>Password</strong> you've entered is 
+								<strong>weak</strong>. (Put atleast one uppercase, one lowercase, one
+								special character, one digit, with minimum of total 8 characters)
+  						</div><br>
+  			 		</div>
+
 				 	<input type="password" class="signupinput-field" placeholder="CONFIRM NEW MASTER PASSWORD"
 					 name = "confPassword" required><br>
 					<input type="checkbox" class="signupcheck-box" required><span class="signupspan">
@@ -113,6 +150,7 @@ if (isset($_POST['signup'])) {
 				</div>
 			</div>
 		</div>
+
 		<script>
 			var x = document.getElementById("signinform");
 			var y = document.getElementById("signupform");
