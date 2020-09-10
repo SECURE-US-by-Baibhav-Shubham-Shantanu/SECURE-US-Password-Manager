@@ -9,16 +9,18 @@
 	width: 10px;
 }
 ::-webkit-scrollbar-track {
+	background: #cccccc;
 	border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-	box-shadow: inset 2px 0 2px #000;
+	box-shadow: inset 5px 5px 5px #333333;
 	background: #404040;
-	border-radius: 5px;
+	border-radius: 10px;
 }
-::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:active {
   background: #666666;
 }
+
 .hero{
 	height: 100%;
 	width: 100%;
@@ -306,7 +308,18 @@ img{
 	vertical-align: bottom;
 	position: relative;
 }
-
+.password-strength-msg-box{
+	height: 58px;
+	width: 200px;
+	padding: 15px 0px;
+	font-size: 12px;
+	color: #fff;
+	border-radius: 5px;
+	background: #ff4d4d;
+	text-align: center;
+	vertical-align: bottom;
+	position: relative;
+}
 .userid-alert-box{
 	top: 264px;
 	left: 50px;
@@ -331,21 +344,15 @@ img{
 	position: absolute;
 	z-index: 1;
 }
-.password-strength-box{
+.password-strength-alert-box{
 	top: 303px;
 	left: 50px;
 	position: absolute;
 	z-index: 1;
 }
-.password-strength-msg-box{
-	height: 60px;
-	width: 200px;
-	padding: 15px 0px;
-	font-size: 12px;
-	color: #fff;
-	border-radius: 5px;
-	background: #ff4d4d;
-	text-align: center;
-	vertical-align: bottom;
-	position: relative;
+.confirm-password-alert-box{
+	top: 348px;
+	left: 50px;
+	position: absolute;
+	z-index: 1;
 }

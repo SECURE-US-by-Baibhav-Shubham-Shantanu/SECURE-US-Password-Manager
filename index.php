@@ -78,7 +78,7 @@ if (isset($_POST['signup'])) {
 					<input type="text" class="signininput-field" placeholder="ENTER USER ID"
 					 name="username" required><br>
 
-			 		<div class="userid-alert-box">
+			 		<div class="userid-alert-box" id="alertbox1">
 			 			<div class="triangle"></div>
 			 			<div class="msg-box">The <strong>User ID</strong> you've entered <strong>doesn't match any account</strong>.
 						</div><br>
@@ -87,7 +87,7 @@ if (isset($_POST['signup'])) {
 					<input type="password" class="signininput-field" placeholder="ENTER MASTER PASSWORD"
 					 name="password" required><br>
 
-					<div class="password-alert-box">
+					<div class="password-alert-box" id="alertbox2">
 						<div class="triangle"></div>
 						<div class="msg-box">The <strong>Password</strong> you've entered is <strong>incorrect</strong>.
 						</div><br>
@@ -104,7 +104,7 @@ if (isset($_POST['signup'])) {
 					<input type="email" class="signupinput-field" placeholder="ENTER YOUR EMAIL ID"
 					 name="email" required><br>
 
-					<div class="email-at-box">
+					<div class="email-at-box" id="alertbox3">
  			 			<div class="triangle"></div>
  			 			<div class="msg-box">The <strong>Email ID</strong> you've entered is <strong>already registered</strong>.
  						</div><br>
@@ -113,7 +113,7 @@ if (isset($_POST['signup'])) {
 					<input type="text" class="signupinput-field" placeholder="ENTER A USERNAME"
 					 name="username" required><br>
 
-					 <div class="userid-at-box">
+					 <div class="userid-at-box" id="alertbox4">
   			 			<div class="triangle"></div>
   			 			<div class="msg-box">The <strong>User ID</strong> you've entered is <strong>already taken</strong>.
   						</div><br>
@@ -122,9 +122,9 @@ if (isset($_POST['signup'])) {
 				 	<input type="password" class="signupinput-field" placeholder="ENTER NEW MASTER PASSWORD"
 					 name="password" required><br>
 
-					 <div class="password-strength-box">
+					 <div class="password-strength-alert-box" id="alertbox5">
   			 			<div class="triangle"></div>
-  			 			<div class="password-strength-msg-box">The <strong>Password</strong> you've entered is 
+  			 			<div class="password-strength-msg-box">The <strong>Password</strong> you've entered is
 								<strong>weak</strong>. (Put atleast one uppercase, one lowercase, one
 								special character, one digit, with minimum of total 8 characters)
   						</div><br>
@@ -132,6 +132,13 @@ if (isset($_POST['signup'])) {
 
 				 	<input type="password" class="signupinput-field" placeholder="CONFIRM NEW MASTER PASSWORD"
 					 name = "confPassword" required><br>
+
+					 <div class="confirm-password-alert-box" id="alertbox6">
+  			 			<div class="triangle"></div>
+  			 			<div class="msg-box">The <strong>Passwords</strong> you've entered <strong>doesn't match</strong>  with each other.
+  						</div><br>
+  			 		</div>
+
 					<input type="checkbox" class="signupcheck-box" required><span class="signupspan">
 						I agree to the terms and conditions<br></span>
 					<button type="submit" id="sbtn" class="signup-btn" name="signup">SIGN UP</button><br>
@@ -150,7 +157,7 @@ if (isset($_POST['signup'])) {
 				</div>
 			</div>
 		</div>
-
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script>
 			var x = document.getElementById("signinform");
 			var y = document.getElementById("signupform");
@@ -178,7 +185,16 @@ if (isset($_POST['signup'])) {
 				r.style.left = "-150px";
 				s.style.left = "-600px";
 			}
+			$(function(){
+				setTimeout(function(){$("#alertbox1").fadeOut()},5000);
+				setTimeout(function(){$("#alertbox2").fadeOut()},5000);
+				setTimeout(function(){$("#alertbox3").fadeOut()},5000);
+				setTimeout(function(){$("#alertbox4").fadeOut()},5000);
+				setTimeout(function(){$("#alertbox5").fadeOut()},10000);
+				setTimeout(function(){$("#alertbox6").fadeOut()},5000);
+			})
 		</script>
+
 	</div>
 </BODY>
 </HTML>

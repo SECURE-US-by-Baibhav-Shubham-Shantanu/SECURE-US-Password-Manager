@@ -1,2 +1,6 @@
+V0.2 (11-09-20)
+-Alert msg box automatically fades
+-Scrollbar design
+
 V0.1 (10-09-20)
 -Alert msg box
