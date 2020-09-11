@@ -1,7 +1,10 @@
-V0.3 (11-09-20)
+V0.4 (11-09-20)
 -recover.html created
 -alert box resolved
 -success box created
+
+V0.3 (11-09-20)
+-Functionality for error box
 
 V0.2 (11-09-20)
 -Alert msg box automatically fades

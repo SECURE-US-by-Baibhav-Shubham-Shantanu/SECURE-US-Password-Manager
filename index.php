@@ -3,17 +3,19 @@ require_once 'pdo.php';
 if (isset($_POST['signin'])) {
 	$username = $_POST['username'];
 	$password = $_POST['password'];
+
 	$sql = "SELECT * FROM login WHERE (username=:user) AND (password=:pass)";
 	$query = $conn->prepare($sql);
 	$query->bindparam(':user',$username);
 	$query->bindparam(':pass',$password);
 	$query->execute();
 	$result = $query->fetch(PDO::FETCH_ASSOC);
+
 	if ($query->rowcount() > 0) {
 		echo $result['email'];
 	}
 	else {
-		echo "Incorrect login credentials";
+		$loginErr = true;
 	}
 }
 
@@ -23,7 +25,13 @@ if (isset($_POST['signup'])) {
 	$username = $_POST['username'];
 	$password= $_POST['password'];
 	$confPass = $_POST['confPassword'];
-	$error = false;
+	$uppercase = preg_match('#[A-Z]#', $password);
+	$lowercase = preg_match('#[a-z]#', $password);
+	$number = preg_match('#[0-9]#', $password);
+	$specialChars = preg_match('#[^\w]#', $password);
+	if (!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
+		$passErr = true;
+	}
 
 	$sql = "SELECT * FROM login WHERE (username=:user)";
 	$query = $conn->prepare($sql);
@@ -31,8 +39,7 @@ if (isset($_POST['signup'])) {
 	$query->execute();
 	$result = $query->fetch(PDO::FETCH_ASSOC);
 	if ($query->rowcount() > 0) {
-		echo "Username already taken";
-		$error = true;
+		$usrnameErr = true;
 	}
 
 	$sql = "SELECT * FROM login WHERE (email=:email)";
@@ -41,16 +48,14 @@ if (isset($_POST['signup'])) {
 	$query->execute();
 	$result = $query->fetch(PDO::FETCH_ASSOC);
 	if ($query->rowcount() > 0) {
-		echo "EmailID already registered";
-		$error = true;
+		$emailErr = true;
 	}
 
 	if ($password != $confPass) {
-		echo "Passwords do not match";
-		$error = true;
+		$confPassErr = true;
 	}
 
-	if (!$error) {
+	if (!$passErr && !$usrnameErr && !$confPassErr && !$emailErr) {
 		$sql = "INSERT INTO login (name, email, username, password) VALUES
 		 (:name, :email, :user, :pass)";
 		$query = $conn->prepare($sql);
@@ -78,13 +83,15 @@ if (isset($_POST['signup'])) {
 					<input type="text" class="signininput-field" placeholder="ENTER USER ID"
 					 name="username" required><br>
 
+				 <?php if ($loginErr): ?>
+					 <div class="signin-alert-box" id="alertbox1">
+ 			 			<strong>Error: </strong>The <strong>Credentials</strong> you've entered <strong>doesn't match any account</strong>.<br>
+ 			 		</div>
+				 <?php endif; ?>
+
 					<input type="password" class="signininput-field" placeholder="ENTER MASTER PASSWORD"
 					 name="password" required><br>
 					<input type="checkbox" class="signincheck-box"><span class="signinspan">Remember Master Password?<br></span>
-
-					<div class="signin-alert-box" id="alertbox1">
-			 			<strong>Error: </strong>The <strong>Credentials</strong> you've entered <strong>doesn't match any account</strong>.<br>
-			 		</div>
 
 					<button type="submit" class="signin-btn" name="signin">SIGN IN</button><br>
 					<a href="recover.html">Need help with Sign in?</a>
@@ -96,40 +103,48 @@ if (isset($_POST['signup'])) {
 					<input type="email" class="signupinput-field" placeholder="ENTER YOUR EMAIL ID"
 					 name="email" required><br>
 
-					<div class="email-at-box" id="alertbox2">
- 			 			<div class="triangle"></div>
- 			 			<div class="msg-box"><strong>Error: </strong>The <strong>Email ID</strong> you've entered is <strong>already registered</strong>.
- 						</div><br>
- 			 		</div>
+					<?php if ($emailErr): ?>
+						<div class="email-at-box" id="alertbox2">
+	 			 			<div class="triangle"></div>
+	 			 			<div class="msg-box"><strong>Error: </strong>The <strong>Email ID</strong> you've entered is <strong>already registered</strong>.
+	 						</div><br>
+	 			 		</div>
+					<?php endif; ?>
 
 					<input type="text" class="signupinput-field" placeholder="ENTER A USERNAME"
 					 name="username" required><br>
 
-					 <div class="userid-at-box" id="alertbox3">
-  			 			<div class="triangle"></div>
-  			 			<div class="msg-box"><strong>Error: </strong>The <strong>User ID</strong> you've entered is <strong>already taken</strong>.
-  						</div><br>
-  			 		</div>
+					 <?php if ($usrnameErr): ?>
+						 <div class="userid-at-box" id="alertbox3">
+	  			 			<div class="triangle"></div>
+	  			 			<div class="msg-box"><strong>Error: </strong>The <strong>User ID</strong> you've entered is <strong>already taken</strong>.
+	  						</div><br>
+	  			 		</div>
+					 <?php endif; ?>
 
 				 	<input type="password" class="signupinput-field" placeholder="SETUP NEW MASTER PASSWORD"
 					 name="password" required><br>
 
-					 <div class="password-strength-alert-box" id="alertbox4">
-  			 			<div class="triangle"></div>
-  			 			<div class="password-strength-msg-box"><strong>Error: </strong>The <strong>Password</strong> you've entered is
-								<strong>weak</strong>. (Put atleast one uppercase, one lowercase, one
-								special character, one digit, with minimum of total 8 characters)
-  						</div><br>
-  			 		</div>
+					 <?php if ($passErr): ?>
+						 <div class="password-strength-alert-box" id="alertbox4">
+	  			 			<div class="triangle"></div>
+	  			 			<div class="password-strength-msg-box"><strong>Error: </strong>The <strong>Password</strong> you've entered is
+									<strong>weak</strong>. (Put atleast one uppercase, one lowercase, one
+									special character, one digit, with minimum of total 8 characters)
+	  						</div><br>
+	  			 		</div>
+					 <?php endif; ?>
 
 				 	<input type="password" class="signupinput-field" placeholder="CONFIRM NEW MASTER PASSWORD"
 					 name = "confPassword" required><br>
 
-					 <div class="confirm-password-alert-box" id="alertbox5">
-  			 			<div class="triangle"></div>
-  			 			<div class="msg-box"><strong>Error: </strong>The <strong>Passwords</strong> you've entered <strong>doesn't match</strong>  with each other.
-  						</div><br>
-  			 		</div>
+					 <?php if ($confPassErr): ?>
+						 <div class="confirm-password-alert-box" id="alertbox5">
+	  			 			<div class="triangle"></div>
+								<div class="msg-box"><strong>Error: </strong>The <strong>Passwords</strong> you've entered <strong>doesn't match</strong>  with each other.
+	  						</div><br>
+	  			 		</div>
+					 <?php endif; ?>
 
 					<input type="checkbox" class="signupcheck-box" required><span class="signupspan">
 						I agree to the terms and conditions<br></span>
@@ -153,7 +168,7 @@ if (isset($_POST['signup'])) {
 			</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script>
+		<script type="text/javascript">
 			var x = document.getElementById("signinform");
 			var y = document.getElementById("signupform");
 			var p = document.getElementById("formbox");
@@ -191,3 +206,8 @@ if (isset($_POST['signup'])) {
 	</div>
 </BODY>
 </HTML>
+
+<?php
+if (isset($_POST['signup'])) {
+	echo "<script type='text/JavaScript'>signup()</script>";
+} ?>
