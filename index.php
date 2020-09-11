@@ -6,6 +6,7 @@ $usrnameErr = false;
 $emailErr = false;
 $passErr = false;
 $confPassErr = false;
+$registered = false;
 
 if (isset($_POST['signin'])) {
 	$username = $_POST['username'];
@@ -70,7 +71,7 @@ if (isset($_POST['signup'])) {
 		$query->bindparam(':email', $email);
 		$query->bindparam(':user', $username);
 		$query->bindparam(':pass', $password);
-		$query->execute();
+		$registered = $query->execute();
 	}
 }
 ?>
@@ -148,16 +149,20 @@ if (isset($_POST['signup'])) {
 					 <?php if ($confPassErr): ?>
 						 <div class="confirm-password-alert-box" id="alertbox5">
 	  			 			<div class="triangle"></div>
-								<div class="msg-box"><strong>Error: </strong>The <strong>Passwords</strong> you've entered <strong>doesn't match</strong>  with each other.
+								<div class="msg-box"><strong>Error: </strong>The <strong>Passwords</strong>
+								 you've entered <strong>doesn't match</strong>  with each other.
 	  						</div><br>
 	  			 		</div>
 					 <?php endif; ?>
 
+					 <?php if ($registered): ?>
+						 <div class="signup-success-box" id="successbox1">
+ 					 		 <strong>Congratulations! </strong>Your <strong>account</strong> is <strong>successfully registered</strong>.<br>
+ 					 	 </div>
+					 <?php endif; ?>
+
 					<input type="checkbox" class="signupcheck-box" required><span class="signupspan">
 						I agree to the terms and conditions<br></span>
-					<div class="signup-success-box" id="successbox1">
-				 		<strong>Congratulations! </strong>Your <strong>account</strong> is <strong>successfully registered</strong>.<br>
-				 	</div>
 					<button type="submit" id="sbtn" class="signup-btn" name="signup">SIGN UP</button><br>
 			</form>
 			</div>

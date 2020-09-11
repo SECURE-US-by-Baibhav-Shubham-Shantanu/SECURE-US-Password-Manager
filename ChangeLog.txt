@@ -1,3 +1,6 @@
+V0.5 (11-09-20)
+-Functionality for message box
+
 V0.4 (11-09-20)
 -recover.html created
 -alert box resolved
