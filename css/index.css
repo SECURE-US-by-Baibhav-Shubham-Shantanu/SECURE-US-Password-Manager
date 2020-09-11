@@ -2,7 +2,6 @@
 	margin: 0;
 	padding: 0;
 	font-family: serif;
-	transition: 1.5s;
 	z-index: 0;
 }
 ::-webkit-scrollbar {
@@ -49,12 +48,14 @@
 	border-radius: 8px 0 0 8px;
 	position: absolute;
 	overflow: hidden;
+	transition: 1.5s;
 }
 .signin-group{
 	top: 60px;
 	left: 125px;
 	width: 450px;
 	position: absolute;
+	transition: 1.5s;
 }
 #signintosecureus{
 	color: #00cc7a;
@@ -139,6 +140,7 @@ img{
 	left: 725px;
 	width: 450px;
 	position: absolute;
+	transition: 1.5s;
 }
 #signupinsecureus{
 	color: #00cc7a;
@@ -178,9 +180,9 @@ img{
 	color: #fff;
 	width: 233px;
 	height: 50px;
-	top: 92px;
+	top: 450px;
 	left: 117px;
-	position: relative;
+	position: absolute;
 	border-radius: 50px;
 	border: 0;
 	font-weight: bold;
@@ -205,11 +207,13 @@ img{
 	border-radius: 0 8px 8px 0;
 	position: absolute;
 	overflow: hidden;
+	transition: 1.5s;
 }
 .signuptoggle-group{
 	top: 160px;
 	left: -150px;
 	position: relative;
+	transition: 1.5s;
 }
 #hellofriend{
 	color: #fff;
@@ -250,6 +254,7 @@ img{
 	top: -11px;
 	left: -750px;
 	position: relative;
+	transition: 1.5s;
 }
 #welcomeback{
 	color: #fff;
@@ -333,7 +338,7 @@ img{
 	position: absolute;
 }
 .signup-success-box{
-	top: 65px;
+	top: 383px;
 	left: 37px;
 	height: 15px;
 	width: 88%;
@@ -343,7 +348,7 @@ img{
 	border-radius: 5px;
 	background: linear-gradient(90deg, #00cc7a, #009966);
 	text-align: center;
-	position: relative;
+	position: absolute;
 }
 .email-at-box{
 	top: 203px;
