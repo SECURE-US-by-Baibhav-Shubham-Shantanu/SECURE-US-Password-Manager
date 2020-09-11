@@ -94,9 +94,9 @@
 	color: #fff;
 	width: 233px;
 	height: 50px;
-	top: 153px;
+	top: 450px;
 	left: 117px;
-	position: relative;
+	position: absolute;
 	border-radius: 50px;
 	border: 0;
 	font-weight: bold;
@@ -111,8 +111,8 @@
 	background: linear-gradient(90deg, #ffff99, #cccc00);
 }
 a{
-	top: 173px;
-	position: relative;
+	top: 520px;
+	position: absolute;
 	font-weight: bold;
 }
 a:link{
@@ -320,7 +320,7 @@ img{
 	position: relative;
 }
 .signin-alert-box{
-	top: 129px;
+	top: 385px;
 	left: 5px;
 	height: 15px;
 	width: 100%;
@@ -330,7 +330,7 @@ img{
 	border-radius: 5px;
 	background: #ff4d4d;
 	text-align: center;
-	position: relative;
+	position: absolute;
 }
 .signup-success-box{
 	top: 65px;
@@ -346,25 +346,25 @@ img{
 	position: relative;
 }
 .email-at-box{
-	top: 213px;
+	top: 203px;
 	left: 50px;
 	position: absolute;
 	z-index: 1;
 }
 .userid-at-box{
-	top: 258px;
+	top: 243px;
 	left: 50px;
 	position: absolute;
 	z-index: 1;
 }
 .password-strength-alert-box{
-	top: 303px;
+	top: 283px;
 	left: 50px;
 	position: absolute;
 	z-index: 1;
 }
 .confirm-password-alert-box{
-	top: 348px;
+	top: 323px;
 	left: 50px;
 	position: absolute;
 	z-index: 1;

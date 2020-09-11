@@ -1,5 +1,12 @@
 <?php
 require_once 'pdo.php';
+
+$loginErr = false;
+$usrnameErr = false;
+$emailErr = false;
+$passErr = false;
+$confPassErr = false;
+
 if (isset($_POST['signin'])) {
 	$username = $_POST['username'];
 	$password = $_POST['password'];
