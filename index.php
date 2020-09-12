@@ -188,6 +188,22 @@ if (isset($_POST['signup'])) {
 			var r = document.getElementById("sutg");
 			var s = document.getElementById("sitg");
 			function signup(){
+				x.style.transition = "1.5s";
+				y.style.transition = "1.5s";
+				p.style.transition = "1.5s";
+				q.style.transition = "1.5s";
+				r.style.transition = "1.5s";
+				s.style.transition = "1.5s";
+				x.style.left = "-475px";
+				y.style.left = "125px";
+				p.style.left = "400px";
+				p.style.borderRadius = "0 8px 8px 0";
+				q.style.left = "-300px";
+				q.style.borderRadius = "8px 0 0 8px";
+				r.style.left = "600px";
+				s.style.left = "150px";
+			}
+			function signupwot(){
 				x.style.left = "-475px";
 				y.style.left = "125px";
 				p.style.left = "400px";
@@ -198,6 +214,12 @@ if (isset($_POST['signup'])) {
 				s.style.left = "150px";
 			}
 			function signin(){
+				x.style.transition = "1.5s";
+				y.style.transition = "1.5s";
+				p.style.transition = "1.5s";
+				q.style.transition = "1.5s";
+				r.style.transition = "1.5s";
+				s.style.transition = "1.5s";
 				x.style.left = "125px";
 				y.style.left = "725px";
 				p.style.left = "0px";
@@ -214,12 +236,11 @@ if (isset($_POST['signup'])) {
 				setTimeout(function(){$("#alertbox5").fadeOut()},5000);
 			})
 		</script>
-
 	</div>
 </BODY>
 </HTML>
 
 <?php
 if (isset($_POST['signup'])) {
-	echo "<script type='text/JavaScript'>signup()</script>";
+	echo "<script type='text/JavaScript'>signupwot()</script>";
 } ?>

@@ -48,14 +48,12 @@
 	border-radius: 8px 0 0 8px;
 	position: absolute;
 	overflow: hidden;
-	transition: 1.5s;
 }
 .signin-group{
 	top: 60px;
 	left: 125px;
 	width: 450px;
 	position: absolute;
-	transition: 1.5s;
 }
 #signintosecureus{
 	color: #00cc7a;
@@ -140,7 +138,6 @@ img{
 	left: 725px;
 	width: 450px;
 	position: absolute;
-	transition: 1.5s;
 }
 #signupinsecureus{
 	color: #00cc7a;
@@ -207,13 +204,11 @@ img{
 	border-radius: 0 8px 8px 0;
 	position: absolute;
 	overflow: hidden;
-	transition: 1.5s;
 }
 .signuptoggle-group{
 	top: 160px;
 	left: -150px;
 	position: relative;
-	transition: 1.5s;
 }
 #hellofriend{
 	color: #fff;
@@ -254,7 +249,6 @@ img{
 	top: -11px;
 	left: -750px;
 	position: relative;
-	transition: 1.5s;
 }
 #welcomeback{
 	color: #fff;
