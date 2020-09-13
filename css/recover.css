@@ -37,7 +37,6 @@
 	position: relative;
 	background: linear-gradient(45deg, #000, #333333);
 	text-align: center;
-	overflow: hidden;
 }
 .triangle{
 	height: 0;
@@ -117,7 +116,6 @@ img{
 }
 .enterotp-group{
 		top: 57px;
-		left: 585px;
 		position: relative;
 }
 .OTPsent-box{
@@ -134,7 +132,7 @@ img{
 	position: absolute;
 }
 .setpassword-group{
-	top: 265px;
+	top: -152px;
 	position: relative;
 }
 .setpassword-field{
