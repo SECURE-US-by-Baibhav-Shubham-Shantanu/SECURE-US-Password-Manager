@@ -64,20 +64,19 @@ if (isset($_POST['sendOTP'])) {
 			<div class="recover-box" id="recoverbox" method="post">
         <h1 id="secureusaccountrecovery"><img src="images/logo1.png"> Account Recovery</h1>
 				<form class="sendotp-group" id="sendotpgroup">
-					<input type="text" class="emailidinput-field" placeholder="ENTER YOUR EMAIL ID"
+					<input type="text" class="input-field" placeholder="ENTER YOUR EMAIL ID"
 					 name="email" required><br>
 
 					<?php if ($emailErr): ?>
-						<div class="emailid-alert-box" id="alertbox1">
+						<div class="alert-box" id="alertbox1">
 				 			<div class="triangle"></div>
-				 			<div class="msg-box">The <strong>Email ID</strong> you've entered <strong>doesn't match any account</strong>.
+				 			<div class="msg-box"><strong>Error:</strong> The <strong>Email ID</strong> you've entered <strong>doesn't match any account</strong>.
 							</div>
 				 		</div>
 					<?php endif; ?>
 
-					<button type="submit" class="submit-btn" name="sendOTP">SEND OTP</button>
+					<button type="submit" class="submit-btn" name="sendOTP" onclick="movetoenterotp()">SEND OTP</button>
 				</form><br>
-
 				<form class="enterotp-group" id="enterotpgroup">
 					<?php if (!$emailErr): ?>
 						<div class="OTPsent-box" id="alertbox2">
@@ -85,18 +84,17 @@ if (isset($_POST['sendOTP'])) {
 					 	</div>
 					<?php endif; ?>
 
-					<input type="password" class="enterotp-field" placeholder="ENTER SENT OTP"
-					 name="otp" required><br>
+					<input type="password" class="input-field" placeholder="ENTER SENT OTP" name="otp" required><br>
 
 					<?php if (1): ?>
-						<div class="otp-alertbox" id="alertbox3">
+						<div class="alert-box" id="alertbox3">
 	 			 			<div class="triangle"></div>
-	 			 			<div class="msg-box">The <strong>OTP</strong> you've entered is <strong>incorrect</strong>.
+	 			 			<div class="msg-box"><strong>Error:</strong> The <strong>OTP</strong> you've entered is <strong>incorrect</strong>.
 	 						</div>
 	 			 		</div>
 					<?php endif; ?>
 
-					<button type="submit" class="submit-btn">SUBMIT OTP</button>
+					<button type="submit" class="submit-btn" onclick="movetosetpassword()">SUBMIT OTP</button>
 					<button type="button" class="submit-btn">RESEND OTP</button>
 				</form><br>
 
@@ -121,7 +119,7 @@ if (isset($_POST['sendOTP'])) {
 								<strong>doesn't match</strong>  with each other.
   						</div>
   			 		</div>
-						<div class="signup-success-box" id="successbox1">
+						<div class="recovery-success-box" id="successbox1">
 							<strong>Congratulations! </strong>Your (<output></output>'s)
 							 <strong>Password</strong> is <strong>successfully reset</strong>.
 							 <strong><a href="index.php">Sign in</a></strong><br>
@@ -129,6 +127,26 @@ if (isset($_POST['sendOTP'])) {
 					<button type="submit" class="submit-btn">RESET MASTER PASSWORD</button><br>
 				</form>
 			</div>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+			<script type="text/javascript">
+				var x = document.getElementById("sendotpgroup");
+				var y = document.getElementById("enterotpgroup");
+				var z = document.getElementById("setpasswordgroup");
+				function movetoenterotp(){
+					x.style.left = "-585px";
+					y.style.left = "0px";
+				}
+				function movetosetpassword(){
+					y.style.top = "-480px";
+					z.style.top = "-152px";
+				}
+				$(function(){
+					setTimeout(function(){$("#alertbox1").fadeOut()},5000);
+					setTimeout(function(){$("#alertbox3").fadeOut()},5000);
+					setTimeout(function(){$("#alertbox4").fadeOut()},10000);
+					setTimeout(function(){$("#alertbox5").fadeOut()},5000);
+				})
+			</script>
 	</div>
 </BODY>
 </HTML>

@@ -50,7 +50,7 @@
 	overflow: hidden;
 }
 .signin-group{
-	top: 60px;
+	top: 35px;
 	left: 125px;
 	width: 450px;
 	position: absolute;
@@ -134,7 +134,7 @@ img{
 	position: relative;
 }
 .signup-group{
-	top: 60px;
+	top: 35px;
 	left: 725px;
 	width: 450px;
 	position: absolute;
@@ -150,7 +150,7 @@ img{
 .signupinput-field{
 	height: 25px;
 	width: 100%;
-	top: 35px;
+	top: 55px;
 	position: relative;
 	padding: 5px;
 	margin-bottom: 5px;
@@ -161,12 +161,12 @@ img{
 	background-color: #cccccc;
 }
 .signupcheck-box{
-	top: 46px;
+	top: 66px;
 	left: 5px;
 	position: relative;
 }
 .signupspan{
-	top: 45px;
+	top: 65px;
 	left: 10px;
 	position: relative;
 	color: #fff;
@@ -315,7 +315,6 @@ img{
 	border-radius: 5px;
 	background: #ff4d4d;
 	text-align: center;
-	vertical-align: bottom;
 	position: relative;
 }
 .signin-alert-box{
@@ -332,7 +331,7 @@ img{
 	position: absolute;
 }
 .signup-success-box{
-	top: 383px;
+	top: 393px;
 	left: 37px;
 	height: 15px;
 	width: 88%;
@@ -345,25 +344,25 @@ img{
 	position: absolute;
 }
 .email-at-box{
-	top: 203px;
+	top: 223px;
 	left: 50px;
 	position: absolute;
 	z-index: 1;
 }
 .userid-at-box{
-	top: 243px;
+	top: 263px;
 	left: 50px;
 	position: absolute;
 	z-index: 1;
 }
 .password-strength-alert-box{
-	top: 283px;
+	top: 303px;
 	left: 50px;
 	position: absolute;
 	z-index: 1;
 }
 .confirm-password-alert-box{
-	top: 323px;
+	top: 343px;
 	left: 50px;
 	position: absolute;
 	z-index: 1;
