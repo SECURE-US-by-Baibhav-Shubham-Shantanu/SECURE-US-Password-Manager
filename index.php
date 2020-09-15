@@ -102,7 +102,7 @@ if (isset($_POST['signup'])) {
 					<input type="checkbox" class="signincheck-box"><span class="signinspan">Remember Master Password?<br></span>
 
 					<button type="submit" class="signin-btn" name="signin">SIGN IN</button><br>
-					<a href="recover.html">Need help with Sign in?</a>
+					<a href="recover.php">Need help with Sign in?</a>
 				</form>
 				<form class="signup-group" id="signupform" method="post">
 					<h1 id="signupinsecureus">Sign up in <img src="images/logo1.png"></h1>
