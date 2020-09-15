@@ -137,7 +137,7 @@ if (isset($_POST['resetPass'])) {
 				<?php if ($OTPsent && !$OTPverified): ?>
 					<form class="enterotp-group" id="enterotpgroup" method="post">
 						<div class="OTPsent-box" id="alertbox2">
-							An <strong>OTP</strong> has been <strong>sent</strong> to your <strong>Email ID</strong>.
+							An <strong>OTP</strong> has been <strong>sent</strong> to your <strong>Email ID ()</strong>.
 						</div>
 
 						<input type="password" class="input-field" placeholder="ENTER SENT OTP" name="otp"><br>
@@ -151,8 +151,13 @@ if (isset($_POST['resetPass'])) {
 							</div>
 						<?php endif; ?>
 
-						<button type="submit" class="submit-btn" name="submitOTP">SUBMIT OTP</button>
-						<button type="submit" class="submit-btn" name="sendOTP">RESEND OTP</button>
+						<div class="reset-email">
+							Entered wrong Email ID?
+							<button type="button" class="reset-email-btn">RE-ENTER EMAIL ID</button>
+						</div>
+
+						<button type="submit" class="otp-submit-btn" name="submitOTP">SUBMIT OTP</button>
+						<button type="reset" class="otp-submit-btn" name="sendOTP">RESEND OTP</button>
 					</form><br>
 				<?php endif; ?>
 
@@ -186,7 +191,7 @@ if (isset($_POST['resetPass'])) {
 
 						<?php if ($updated): ?>
 							<div class="recovery-success-box" id="successbox1">
-								<strong>Congratulations! </strong>Your <strong>Password</strong> is <strong>successfully reset</strong>.
+								<strong>Congratulations! </strong>Your ('s)<strong>Password</strong> is <strong>successfully reset</strong>.
 								<strong><a href="index.php">Sign in</a></strong><br>
 							</div>
 						<?php endif; ?>

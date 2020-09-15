@@ -1,3 +1,8 @@
+V0.9  (15-09-20)
+-ReEnter email button
+-automatic width of message boxes
+-few bugs fixed
+
 V0.8 (15-09-20)
 -php for password recovery
 
