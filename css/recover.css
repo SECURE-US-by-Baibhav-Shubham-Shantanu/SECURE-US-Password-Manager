@@ -76,8 +76,9 @@ img{
 	text-shadow: 2px 2px 2px #000;
 }
 .sendotp-group{
-	top: 185px;
-	position: relative;
+	width: 100%;
+	top: 280px;
+	position: absolute;
 }
 .input-field{
 	height: 50px;
@@ -115,8 +116,9 @@ img{
 	background: linear-gradient(90deg, #ffff99, #cccc00);
 }
 .enterotp-group{
-		top: 57px;
-		position: relative;
+	  width: 100%;
+		top: 280px;
+		position: absolute;
 }
 .OTPsent-box{
 	top: -100px;
@@ -132,13 +134,13 @@ img{
 	position: absolute;
 }
 .setpassword-group{
-	top: -152px;
-	position: relative;
+	width: 100%;
+	top: 245px;
+	position: absolute;
 }
 .setpassword-field{
 	height: 50px;
 	width: 64%;
-	top: 40px;
 	position: relative;
 	padding: 5px;
 	margin-bottom: 10px;
@@ -149,7 +151,7 @@ img{
 	color: #000;
 }
 .password-strength-alert-box{
-	top: 92px;
+	top: 53px;
 	left: 150px;
 	position: absolute;
 	z-index: 1;
@@ -167,13 +169,13 @@ img{
 	position: relative;
 }
 .confirm-password-alert-box{
-	top: 163px;
+	top: 123px;
 	left: 150px;
 	position: absolute;
 	z-index: 1;
 }
 .recovery-success-box{
-	top: 205px;
+	top: 165px;
 	left: 63px;
 	height: 15px;
 	width: 82%;
@@ -185,6 +187,18 @@ img{
 	text-align: center;
 	position: absolute;
 }
+.final-submit-btn{
+	color: #fff;
+	width: 233px;
+	height: 50px;
+	top: 100px;
+	position: relative;
+	border-radius: 50px;
+	border: 0;
+	font-weight: bold;
+	background: linear-gradient(90deg, #00cc7a, #009966);
+}
+
 a:link{
 	color: #fff;
 }

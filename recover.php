@@ -191,7 +191,7 @@ if (isset($_POST['resetPass'])) {
 							</div>
 						<?php endif; ?>
 
-						<button type="submit" class="submit-btn" name="resetPass">RESET MASTER PASSWORD</button><br>
+						<button type="submit" class="final-submit-btn" name="resetPass">RESET MASTER PASSWORD</button><br>
 					</form>
 				<?php endif; ?>
 
